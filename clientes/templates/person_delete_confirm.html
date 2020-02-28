@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Tem certeza que deseja deletar o registro abaixo?</h1>
+    <form method='POST' enctype="multipart/form-data"> <!--POST, utilizado para enviar informações para algum lugar.-->
+        {% csrf_token %} <!--Proteção automatica que o django nos prove para evitar que as pessoas evitem manipular nosso formulario-->
+        {{ form.as_p }}
+        <br><br> <!--Form que vem da nossa view-->
+        <button class="btn btn-primary" type="submit">Delete</button> 
+        <a class="btn btn-secundary" href="{% url 'person_list'%}">Cancelar</a> 
+    </form>
+
+</body>
+</html>
