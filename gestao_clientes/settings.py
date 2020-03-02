@@ -147,3 +147,7 @@ MEDIA_ROOT='media' # Pasta em que deve ser salva
 LOGIN_URL= '/login/' # url de login para que o usuário possa logar
 
 LOGIN_REDIRECT_URL='person_list' # url para onde o usuário vai ser redirecionado após o login
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
