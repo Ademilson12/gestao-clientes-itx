@@ -39,7 +39,6 @@
     top:2px;
 }
 
-
 /*
  * Specific styles of signin component
  */
@@ -49,7 +48,7 @@
 body, html {
     height: 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(249, 251, 252), rgb(13, 47, 62));
+    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
 }
 
 .card-container.card {

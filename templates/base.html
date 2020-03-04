@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> <!-- Import do bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">   <!-- Import de icons -->
+    <link rel="stylesheet" href="{% static 'style/stick-footer.css' %}">
+    <title>{% block title %} {% endblock %}</title> <!-- Mantém o titulo em todas as paginas--> 
+</head> 
+<body>
+    
+    <div class="container-fluid">
+        {% block main %} <!-- Onde vai o conteudo principal do código -->
+        {% endblock %} <!-- Final do bloco contendo código-->
+    </div>
+
+    {% block footer %}
+    {% endblock %}
+
+
+</body>
+</html>

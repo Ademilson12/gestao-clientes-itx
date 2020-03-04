@@ -1,21 +1,23 @@
+{% extends 'base.html' %} 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% load bootstrap %} <!-- Carregando bootstrap como mostra a documentação -->
+
+{% block title %} Project {% endblock %} <!-- Esse trecho de códgio vai ser inserido dentro de base.html onde tem esse block title-->
+
+{% block main %} <!-- Todo esse código será inserido dentro do block main de base.html, e automaticamente ganhamos o html que se encontra por lá -->
+
     
+    
+    <h1>Criar novo usuário</h1> 
+    <div class="jumbotron">
     <form method='POST' enctype="multipart/form-data"> <!--POST, utilizado para enviar informações para algum lugar.-->
         {% csrf_token %} <!--Proteção automatica que o django nos prove para evitar que as pessoas evitem manipular nosso formulario-->
-        {{ form.as_p }}
+        {{ form|bootstrap  }} <!-- Personalização do form -->
         <br><br> <!--Form que vem da nossa view-->
-        <button type="submit">Salvar</button> 
+        <button class="btn btn-success" type="submit">Salvar</button> 
+        <a class="btn btn-primary" href="{% url 'person_list'%}">Cancelar</a> 
     </form>
+    </div>
+
     
-
-
-</body>
-</html>
+{% endblock %}
